@@ -1,40 +1,59 @@
 import React from 'react'
 import Input from './Input'
 import Button from './Button'
+import personImg from '../assets/person.jpeg'
 
 const Asside = () => {
-    return (
-        <div className='h-screen w-1/4 bg-purple-900 text-white flex flex-col justify-start items-center px-11'>
 
-            <div className="">
-                <div>
-                    <img src="./imges/person.jpg" alt="" />
+    // function to create bucket
+    function handleCreateBucket() {
+        console.log('create bucket')
+
+    }
+    return (
+        <div className='h-screen w-1/4 bg-purple-900 text-white flex flex-col justify-start items-center px-11 pt-11'>
+
+            <div className="flex flex-col justify-center items-center">
+
+                <div className='rounded-full'>
+                    <img
+                        src={personImg}
+                        className='w-24 h-24 rounded-full'
+                        alt="userImage" />
                 </div>
-                <div>
-                    <p>Customer Name</p>
+                <div className='mt-3'>
+                    <p className='text-3xl'>Potter</p>
                 </div>
             </div>
 
-            <div>
-                <h2>
+            <div className='mt-3'>
+                <h2
+                    className='text-2xl text-center'>
                     ₹5000
                 </h2>
-                <h3>Total Amount</h3>
+
+                <h3
+                    className='mt-2'>Total Amount</h3>
             </div>
 
-            <div>
+            <div className='mt-6'>
                 <div className='flex'>
                     <div>
                         <Input />
                     </div>
                     <div>
-                        <Button value={'Create Bucket'} />
+                        <Button value={'Create Bucket'} onClick={handleCreateBucket} />
                     </div>
                 </div>
             </div>
 
             <div>
-                <Button value={'Transfer Money'} />
+
+                {/* both are same with little bit difference */}
+
+                {/* <Button value={'Transfer Money'} className='text-purple-800 bg-white hover:text-white hover:bg-purple-800 border-2 rounded-lg'/> */}
+
+                <Button value={'Transfer Money'} className='mt-4 text-white bg-purple-800 hover:text-purple-800 hover:bg-white border-2 rounded-lg'/>
             </div>
         </div>
     )
