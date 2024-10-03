@@ -1,20 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Asside from "./components/Asside.jsx"
+import Main from "./components/Main.jsx"
+import Navbar from "./components/Navbar.jsx"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
 
     <>
-      <div className='bg-gray-800 h-screen w-screen '>
 
-        <h1 className="text-3xl font-bold underline text-white">
-          Hello world!
-        </h1 >
+      <div className="flex">
+
+        <Asside />
+
+        <div className="w-full">
+
+          <Navbar />
+          <Main />
+        </div>
       </div>
+
     </>
   )
 }
