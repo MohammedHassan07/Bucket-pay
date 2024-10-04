@@ -36,24 +36,38 @@ const Asside = () => {
                     className='mt-2'>Total Amount</h3>
             </div>
 
-            <div className='mt-6'>
-                <div className='flex'>
+            <div className='mt-6'><div>
+
+                <Input placeHolder={'Enter Bucket Name'} />
+            </div>
+                <div className='flex justify-center items-center'>
+
                     <div>
-                        <Input />
+
+                        {/* both are same with little bit difference */}
+
+                        {/* <Button value={'Transfer Money'} className='text-purple-800 bg-white hover:text-white hover:bg-purple-800 border-2 rounded-lg'/> */}
+
+                        <Button
+                            value={'Transfer Money'}
+                            className='mt-4 border-2 rounded-lg' />
                     </div>
+
                     <div>
-                        <Button value={'Create Bucket'} onClick={handleCreateBucket} />
+                        
+                        <Button
+                            value={'Create Bucket'}
+                            className='mt-4 border-2 rounded-lg'
+                            onClick={handleCreateBucket} />
                     </div>
+
+
                 </div>
             </div>
 
             <div>
 
-                {/* both are same with little bit difference */}
 
-                {/* <Button value={'Transfer Money'} className='text-purple-800 bg-white hover:text-white hover:bg-purple-800 border-2 rounded-lg'/> */}
-
-                <Button value={'Transfer Money'} className='mt-4 text-white bg-purple-800 hover:text-purple-800 hover:bg-white border-2 rounded-lg'/>
             </div>
         </div>
     )

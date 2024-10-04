@@ -1,5 +1,5 @@
 import Asside from "./components/Asside.jsx"
-import Main from "./components/Main.jsx"
+import Main from "./components/Pages/Main.jsx"
 import Navbar from "./components/Navbar.jsx"
 
 function App() {

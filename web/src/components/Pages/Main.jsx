@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Card from './Card.jsx'
-import Line from './Line.jsx'
-import Button from './Button.jsx'
+import Card from '../Card.jsx'
+import Line from '../Line.jsx'
+import Button from '../Button.jsx'
 
 const Main = () => {
 
@@ -24,13 +24,13 @@ const Main = () => {
                         value={'Chats'}
                         onClick={handleButtonClick}
                         isActive={activeButton === 'Chats'}
-                        className='rounded-3xl  border-2' />
+                        className='rounded-3xl border-2' />
 
                     <Button
                         value={'My Buckets'}
                         onClick={handleButtonClick}
                         isActive={activeButton === 'My Buckets'}
-                        className='rounded-3xl  border-2' />
+                        className='rounded-3xl border-2' />
 
                     <Button
                         value={'Others'}

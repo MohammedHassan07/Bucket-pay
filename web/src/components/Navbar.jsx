@@ -11,9 +11,9 @@ const Navbar = () => {
 
             <div>
                 <ul className="flex justify-evenly items-center gap-20 text-sm">
-                    <li>Blogs</li>
-                    <li>About</li>
-                    <li>Contact Us</li>
+                    <li className='cursor-pointer'>Blogs</li>
+                    <li className='cursor-pointer'>About</li>
+                    <li className='cursor-pointer'>Contact Us</li>
                 </ul>
             </div>
 
