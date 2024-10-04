@@ -6,7 +6,7 @@ const Button = ({ value, className, onClick, isActive }) => {
         <button
             className={`border-purple-800 p-1 px-3 mx-1 hover:bg-purple-800 hover:text-white shadow-lg ${className}
             ${isActive ? 'bg-purple-800 text-white' : 'bg-white text-purple-800'}`}
-            onClick={() => { onClick(value) }}>
+            onClick={(e) => { onClick(e) }}>
             {value}
         </button>
     )

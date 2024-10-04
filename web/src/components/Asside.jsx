@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Input from './Input'
 import Button from './Button'
 import personImg from '../assets/person.jpeg'
 
 const Asside = () => {
 
+    const [bucketName, setBucketName] = useState('')
+
     // function to create bucket
     function handleCreateBucket() {
         console.log('create bucket')
 
     }
+
+    function handleOnChange(e) {
+        setBucketName(e)
+        console.log(e)
+    }
+    
     return (
         <div className='h-screen w-1/4 bg-purple-900 text-white flex flex-col justify-start items-center px-11 pt-11'>
 
@@ -38,7 +46,7 @@ const Asside = () => {
 
             <div className='mt-6'><div>
 
-                <Input placeHolder={'Enter Bucket Name'} />
+                <Input placeHolder={'Enter Bucket Name'} onChange={(value) => {handleOnChange(value)}} />
             </div>
                 <div className='flex justify-center items-center'>
 
