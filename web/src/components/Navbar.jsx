@@ -8,11 +8,15 @@ const Navbar = () => {
         <nav className="flex justify-around items-center h-14 bg-purple-950 text-white font-normal w-full">
 
             <div className="">
-                <h2 className='font-bold  cursor-pointer text-2xl'>BucketPay</h2>
+                <Link
+                    to={'/'}>
+                    <h2
+                        className='font-bold  cursor-pointer text-2xl'>BucketPay</h2>
+                </Link>
             </div>
 
             <div>
-                <ul className="flex justify-evenly items-center gap-20 text-sm">
+                <ul className="flex justify-evenly items-center gap-20 text-lg">
                     <Link
                         to={'/'}>
                         <li
@@ -34,7 +38,7 @@ const Navbar = () => {
                 className='w-12 h-12'
                 alt="User image" /> */}
 
-                <Button value={'Log out'} className={'border-2 rounded-lg'}/>
+                <Button value={'Log out'} className={'border-2 rounded-lg'} />
             </div>
         </nav>
     )
