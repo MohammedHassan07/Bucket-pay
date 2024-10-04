@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import Input from '../components/Input'
 import Button from '../components/Button'
 import Line from '../components/Line'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 
   const [mobile, setMobile] = useState('')
 
   const [password, setPassword] = useState('')
+
+  const [error, setError] = useState('error')
 
   async function handleLogin(e) {
     e.preventDefault()
@@ -31,37 +34,45 @@ const Login = () => {
   }
 
   return (
-    <form>
-      <h2>Login to BucketPay</h2>
+    <div className='w-screen h-screen flex justify-center items-start'>
 
-      <div>
+      <form className='flex flex-col gap-5 justify-center items-center mt-36 border-2 rounded-lg border-purple-800 w-2/5 p-14 '>
+        
+        <h2 className='text-purple-700 text-2xl'>Registerto BucketPay</h2>
+
         <Input
           type={'tel'}
-          placeHolder={'Enter Your Mobile Number'}
-          onChange={(value) => { handleOnChange('mobile', value) }} />
-      </div>
-      <div>
+          placeHolder={'Mobile'}
+          onChange={(value) =>
+            handleOnChange('mobile', value)} />
+
         <Input
           type={'password'}
-          placeHolder={'Enter Your Password'}
-          onChange={() => { handleOnChange('password', value) }} />
-      </div>
-      <div>
+          placeHolder={'Password'}
+          onChange={(value) =>
+            handleOnChange('password', value)} />
+            
         <Button
-          onClick={handleLogin} value={'Login'} />
-      </div>
+          value={'Login'}
+          className={'border-2 rounded-lg'}
+          onClick={handleLogin} />
 
-      <Line />
+        <p>{error}</p>
 
-      <div>
-        <div>
-          <span>Don`t Have account?
-            <p>Register Here</p>
+        <Line />
+
+        <div className='text-center'>
+          <span>Dont have an account?
+            <Link
+              to={'/register'}>
+              <p
+                className='underline text-purple-800'>Register</p>
+            </Link>
           </span>
         </div>
 
-      </div>
-    </form>
+      </form>
+    </div>
   )
 }
 
