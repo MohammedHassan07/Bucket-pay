@@ -18,7 +18,7 @@ const Register = () => {
         e.preventDefault()
 
         console.log(name, mobile, password)
-        
+
         const data = { name, mobile, password }
         if (isEmpty(data)) {
 
@@ -29,7 +29,6 @@ const Register = () => {
             const response = await makeRequest('/user/register', data)
             console.log(response)
         }
-
     }
 
     function handleOnChange(field, value) {
@@ -54,7 +53,7 @@ const Register = () => {
         <div className='w-screen h-screen flex justify-center items-start'>
 
             <form className='flex flex-col gap-5 justify-center items-center mt-16 border-2 rounded-lg border-purple-800 w-2/5 p-14 '>
-                <h2 className='text-purple-700 text-2xl'>Registerto BucketPay</h2>
+                <h2 className='text-purple-700 text-2xl'>Register to BucketPay</h2>
 
                 <Input
                     type={'text'}
@@ -75,12 +74,12 @@ const Register = () => {
                     onChange={(value) =>
                         handleOnChange('password', value)} />
 
+                <p className='text-purple-900'>{error}</p>
+                
                 <Button
                     value={'Registe'}
                     className={'border-2 rounded-lg'}
                     onClick={handleRegister} />
-
-                <p className='text-purple-900'>{error}</p>
 
                 <Line />
 

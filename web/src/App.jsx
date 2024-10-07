@@ -7,6 +7,7 @@ import Chats from './Pages/Chats.jsx'
 import Buckets from './Pages/Buckets.jsx'
 import Navbar from "./components/Navbar.jsx"
 import Home from './Pages/Home.jsx'
+import UPI_Pin from './Pages/UPI_Pin.jsx'
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
         <Navbar />
 
         <Routes>
-          
+
           <Route path='/' exact element={<Home />}>
             <Route path='/' element={<Chats />} />
             <Route path='/buckets' element={<Buckets />} />
@@ -27,6 +28,7 @@ function App() {
 
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/UPI' element={<UPI_Pin />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>

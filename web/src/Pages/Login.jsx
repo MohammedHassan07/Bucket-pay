@@ -47,7 +47,7 @@ const Login = () => {
 
       <form className='flex flex-col gap-5 justify-center items-center mt-16 border-2 rounded-lg border-purple-800 w-2/5 p-14 '>
 
-        <h2 className='text-purple-700 text-2xl'>Registerto BucketPay</h2>
+        <h2 className='text-purple-700 text-2xl'>Login to BucketPay</h2>
 
         <Input
           type={'tel'}
@@ -63,12 +63,12 @@ const Login = () => {
             handleOnChange('password', value)
           } />
 
+        <p className='text-purple-900'>{error}</p>
+
         <Button
           value={'Login'}
           className={'border-2 rounded-lg'}
           onClick={handleLogin} />
-
-        <p className='text-purple-900'>{error}</p>
 
         <Line />
 
