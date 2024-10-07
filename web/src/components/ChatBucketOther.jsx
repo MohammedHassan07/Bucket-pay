@@ -16,7 +16,7 @@ const ChatBucketOther = () => {
         <>
             <div>
 
-                <Link to={'/chats'} >
+                <Link to={'/'} >
                     <Button
                         value={'Chats'}
                         onClick={handleButtonClick}

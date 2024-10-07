@@ -20,7 +20,7 @@ function App() {
         <Routes>
           
           <Route path='/' exact element={<Home />}>
-            <Route path='/chats' element={<Chats />} />
+            <Route path='/' element={<Chats />} />
             <Route path='/buckets' element={<Buckets />} />
             <Route path='/others' element={<Buckets />} />
           </Route>
