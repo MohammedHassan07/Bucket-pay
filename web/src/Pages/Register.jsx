@@ -4,15 +4,13 @@ import Button from '../components/Button'
 import Line from '../components/Line'
 import isEmpty from '../utils/isEmpty'
 import { Link } from 'react-router-dom'
+import { makeRequest } from '../utils/networkRequest.js'
 
 const Register = () => {
 
     const [name, setName] = useState('')
-
     const [mobile, setMobile] = useState('')
-
     const [password, setPassword] = useState('')
-
     const [error, setError] = useState('')
 
     // function to handle register
@@ -20,7 +18,17 @@ const Register = () => {
         e.preventDefault()
 
         console.log(name, mobile, password)
-        if (isEmpty({ name, mobile, password })) { }
+        
+        const data = { name, mobile, password }
+        if (isEmpty(data)) {
+
+            setError('Values are Empty')
+            setTimeout(() => { setError('') }, 3000)
+        } else {
+
+            const response = await makeRequest('/user/register', data)
+            console.log(response)
+        }
 
     }
 
@@ -45,7 +53,7 @@ const Register = () => {
 
         <div className='w-screen h-screen flex justify-center items-start'>
 
-            <form className='flex flex-col gap-5 justify-center items-center mt-36 border-2 rounded-lg border-purple-800 w-2/5 p-14 '>
+            <form className='flex flex-col gap-5 justify-center items-center mt-16 border-2 rounded-lg border-purple-800 w-2/5 p-14 '>
                 <h2 className='text-purple-700 text-2xl'>Registerto BucketPay</h2>
 
                 <Input
@@ -71,7 +79,8 @@ const Register = () => {
                     value={'Registe'}
                     className={'border-2 rounded-lg'}
                     onClick={handleRegister} />
-                <p>{error}</p>
+
+                <p className='text-purple-900'>{error}</p>
 
                 <Line />
 
